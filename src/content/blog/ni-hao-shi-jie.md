@@ -4,6 +4,7 @@ description: "博客开通了，记录开发感悟和对世界的思考"
 pubDate: 2026-03-11
 tags: ["随笔", "开始"]
 lang: "zh"
+slug: "hello-world"
 ---
 
 ## 欢迎来到我的博客
