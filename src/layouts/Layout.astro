@@ -1,0 +1,127 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tinkerer. Independent Developer. Building small things with AI-native workflow." />
+    <meta name="author" content="Linger" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="terminal">
+      <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">~/linger</span>
+      </div>
+      <div class="terminal-body">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-terminal: #0d1117;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --accent-green: #58a6ff;
+    --accent-cyan: #79c0ff;
+    --accent-yellow: #d29922;
+    --accent-purple: #bc8cff;
+    --border-color: #30363d;
+    --code-bg: #161b22;
+  }
+
+  html {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .terminal {
+    max-width: 900px;
+    width: 100%;
+    background: var(--bg-terminal);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 16px 70px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+
+  .terminal-header {
+    background: var(--bg-secondary);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .dot.red { background: #ff5f56; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #27c93f; }
+
+  .terminal-title {
+    margin-left: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .terminal-body {
+    padding: 2rem;
+    min-height: 60vh;
+  }
+
+  a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+  }
+
+  ::selection {
+    background: var(--accent-purple);
+    color: white;
+  }
+</style>

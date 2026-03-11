@@ -1,0 +1,28 @@
+{
+  "name": "linger1910.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Linger1910/Linger1910.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Linger1910/Linger1910.github.io/issues"
+  },
+  "homepage": "https://github.com/Linger1910/Linger1910.github.io#readme",
+  "dependencies": {
+    "@astrojs/check": "^0.9.7",
+    "astro": "^6.0.2",
+    "typescript": "^5.9.3"
+  }
+}
