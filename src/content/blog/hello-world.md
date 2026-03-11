@@ -1,28 +1,29 @@
 ---
 title: "Hello World"
-description: "博客开通了，记录开发感悟和对世界的思考"
+description: "My blog is now live - documenting development insights and thoughts on the world"
 pubDate: 2026-03-11
-tags: ["随笔", "开始"]
+tags: ["musings", "beginning"]
+lang: "en"
 ---
 
-## 欢迎来到我的博客
+## Welcome to My Blog
 
-这里是我会记录想法和感悟的地方。
+This is where I'll share my thoughts and reflections.
 
-### 为什么写博客？
+### Why Blog?
 
-作为一个独立开发者，我想：
+As an independent developer, I want to:
 
-- 记录开发过程中的心得体会
-- 分享对技术发展的思考
-- 探讨 AI 时代下个人发展的可能性
+- Document insights from the development process
+- Share thoughts on technology trends
+- Explore possibilities in the AI era
 
-### 接下来
+### What's Next
 
-我会不定期更新，内容可能包括：
+I'll update occasionally with:
 
-1. 技术笔记和项目复盘
-2. 对当下社会变化的观察
-3. 对未来趋势的思考
+1. Technical notes and project retrospectives
+2. Observations on societal changes
+3. Thoughts on future trends
 
 Stay tuned.
