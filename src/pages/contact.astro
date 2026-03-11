@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { t } from '../i18n';
 ---
 
 <Layout title="Contact - Linger">
@@ -8,16 +7,16 @@ import { t } from '../i18n';
     <section class="header">
       <div class="prompt">
         <span class="symbol">$</span>
-        <span class="command">cat {t('contact.title', 'en')}</span>
+        <span class="command">cat contact.txt</span>
       </div>
       <a href="/" class="back-link">
-        <span class="bracket">[</span>{t('contact.backHome', 'en')}<span class="bracket">]</span>
+        <span class="bracket">[</span>← Back Home<span class="bracket">]</span>
       </a>
     </section>
 
     <section class="contact-info">
       <div class="contact-item">
-        <span class="label">{t('contact.email', 'en')}:</span>
+        <span class="label">Email:</span>
         <a href="mailto:linger_1910@outlook.com" class="value">
           linger_1910@outlook.com
         </a>

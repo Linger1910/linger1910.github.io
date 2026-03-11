@@ -1,10 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { t } from '../../i18n';
 
 const posts = (await getCollection('blog'))
-  .filter((post) => post.data.lang === 'en')
   .sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
   );
@@ -23,16 +21,16 @@ function formatDate(date: Date): string {
     <section class="header">
       <div class="prompt">
         <span class="symbol">$</span>
-        <span class="command">ls ./{t('blog.title', 'en')}</span>
+        <span class="command">ls ./posts/</span>
       </div>
       <a href="/" class="back-link">
-        <span class="bracket">[</span>{t('blog.backHome', 'en')}<span class="bracket">]</span>
+        <span class="bracket">[</span>← Back Home<span class="bracket">]</span>
       </a>
     </section>
 
     <section class="posts">
       {posts.length === 0 ? (
-        <p class="empty">{t('blog.noPosts', 'en')}</p>
+        <p class="empty">No posts found.</p>
       ) : (
         <ul class="post-list">
           {posts.map((post) => (

@@ -3,7 +3,6 @@ title: "Hello World"
 description: "My blog is now live - documenting development insights and thoughts on the world"
 pubDate: 2026-03-11
 tags: ["musings", "beginning"]
-lang: "en"
 ---
 
 ## Welcome to My Blog

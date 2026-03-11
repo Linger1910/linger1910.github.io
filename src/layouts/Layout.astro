@@ -1,17 +1,13 @@
 ---
-import LangSwitch from '../components/LangSwitch.astro';
-
 interface Props {
   title: string;
-  lang?: string;
 }
 
-const { title, lang = 'en' } = Astro.props;
-const htmlLang = lang === 'zh' ? 'zh-CN' : 'en';
+const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={htmlLang}>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,7 +23,6 @@ const htmlLang = lang === 'zh' ? 'zh-CN' : 'en';
         <span class="dot yellow"></span>
         <span class="dot green"></span>
         <span class="terminal-title">~/linger</span>
-        <LangSwitch />
       </div>
       <div class="terminal-body">
         <slot />
