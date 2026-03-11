@@ -1,0 +1,197 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('zh-CN', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+}
+---
+
+<Layout title="Blog - Linger">
+  <main>
+    <section class="header">
+      <div class="prompt">
+        <span class="symbol">$</span>
+        <span class="command">ls ./posts/</span>
+      </div>
+      <a href="/" class="back-link">
+        <span class="bracket">[</span>← Back Home<span class="bracket">]</span>
+      </a>
+    </section>
+
+    <section class="posts">
+      {posts.length === 0 ? (
+        <p class="empty">No posts found.</p>
+      ) : (
+        <ul class="post-list">
+          {posts.map((post) => (
+            <li class="post-item">
+              <article>
+                <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} class="post-title">
+                  <span class="bullet">→</span>
+                  {post.data.title}
+                </a>
+                <div class="post-meta">
+                  <span class="date">{formatDate(post.data.pubDate)}</span>
+                  {post.data.tags.length > 0 && (
+                    <span class="tags">
+                      {post.data.tags.map((tag: string) => (
+                        <span class="tag">#{tag}</span>
+                      ))}
+                    </span>
+                  )}
+                </div>
+                <p class="post-desc">{post.data.description}</p>
+              </article>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+
+    <section class="cursor">
+      <span class="blink">▌</span>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .prompt {
+    font-size: 0.9rem;
+  }
+
+  .symbol {
+    color: var(--accent-green);
+    margin-right: 0.5rem;
+  }
+
+  .command {
+    color: var(--accent-yellow);
+  }
+
+  .back-link {
+    font-size: 0.875rem;
+  }
+
+  .bracket {
+    color: var(--text-secondary);
+  }
+
+  .empty {
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .post-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .post-item {
+    border-left: 2px solid var(--border-color);
+    padding-left: 1.25rem;
+    transition: border-color 0.2s;
+  }
+
+  .post-item:hover {
+    border-left-color: var(--accent-green);
+  }
+
+  .post-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--accent-cyan);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .post-title:hover {
+    color: var(--accent-green);
+  }
+
+  .bullet {
+    color: var(--accent-green);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .date {
+    color: var(--text-secondary);
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    color: var(--accent-purple);
+    font-size: 0.8rem;
+  }
+
+  .post-desc {
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .cursor {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+  }
+
+  .blink {
+    animation: blink 1s infinite;
+    color: var(--accent-green);
+    font-size: 1.25rem;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .post-title {
+      font-size: 1.1rem;
+    }
+
+    .post-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+  }
+</style>

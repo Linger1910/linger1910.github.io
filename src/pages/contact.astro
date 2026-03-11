@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact - Linger">
+  <main>
+    <section class="header">
+      <div class="prompt">
+        <span class="symbol">$</span>
+        <span class="command">cat contact.txt</span>
+      </div>
+      <a href="/" class="back-link">
+        <span class="bracket">[</span>← Back Home<span class="bracket">]</span>
+      </a>
+    </section>
+
+    <section class="contact-info">
+      <div class="contact-item">
+        <span class="label">Email:</span>
+        <a href="mailto:linger_1910@outlook.com" class="value">
+          linger_1910@outlook.com
+        </a>
+      </div>
+          </section>
+
+    <section class="cursor">
+      <span class="blink">▌</span>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .prompt {
+    font-size: 0.9rem;
+  }
+
+  .symbol {
+    color: var(--accent-green);
+    margin-right: 0.5rem;
+  }
+
+  .command {
+    color: var(--accent-yellow);
+  }
+
+  .back-link {
+    font-size: 0.875rem;
+  }
+
+  .bracket {
+    color: var(--text-secondary);
+  }
+
+  .contact-info {
+    border-left: 2px solid var(--border-color);
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .value {
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .contact-item a.value:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+  }
+
+  .cursor {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+  }
+
+  .blink {
+    animation: blink 1s infinite;
+    color: var(--accent-green);
+    font-size: 1.25rem;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .contact-info {
+      padding-left: 1rem;
+    }
+
+    .value {
+      font-size: 1rem;
+      word-break: break-all;
+    }
+  }
+</style>
