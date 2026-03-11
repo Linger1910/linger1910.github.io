@@ -1,14 +1,14 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import { t } from '../../i18n';
+import { t } from '../../../i18n';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString('en-US', {
+  return date.toLocaleDateString('zh-CN', {
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
@@ -16,27 +16,27 @@ function formatDate(date: Date): string {
 }
 ---
 
-<Layout title="Blog - Linger">
+<Layout title="博客 - Linger" lang="zh">
   <main>
     <section class="header">
       <div class="prompt">
         <span class="symbol">$</span>
-        <span class="command">ls ./{t('blog.title', 'en')}</span>
+        <span class="command">ls ./{t('blog.title', 'zh')}</span>
       </div>
-      <a href="/" class="back-link">
-        <span class="bracket">[</span>{t('blog.backHome', 'en')}<span class="bracket">]</span>
+      <a href="/zh" class="back-link">
+        <span class="bracket">[</span>{t('blog.backHome', 'zh')}<span class="bracket">]</span>
       </a>
     </section>
 
     <section class="posts">
       {posts.length === 0 ? (
-        <p class="empty">{t('blog.noPosts', 'en')}</p>
+        <p class="empty">{t('blog.noPosts', 'zh')}</p>
       ) : (
         <ul class="post-list">
           {posts.map((post) => (
             <li class="post-item">
               <article>
-                <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} class="post-title">
+                <a href={`/zh/blog/${post.id.replace(/\.md$/, '')}/`} class="post-title">
                   <span class="bullet">→</span>
                   {post.data.title}
                 </a>
@@ -119,80 +119,9 @@ function formatDate(date: Date): string {
   }
 
   .post-item:hover {
-    border-left-color: var(--accent-green);
+    border-left-color: zh baz: var(--accent-green);
   }
 
   .post-title {
     font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--accent-cyan);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .post-title:hover {
-    color: var(--accent-green);
-  }
-
-  .bullet {
-    color: var(--accent-green);
-  }
-
-  .post-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
-  }
-
-  .date {
-    color: var(--text-secondary);
-  }
-
-  .tags {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .tag {
-    color: var(--accent-purple);
-    font-size: 0.8rem;
-  }
-
-  .post-desc {
-    margin-top: 0.75rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  .cursor {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px dashed var(--border-color);
-  }
-
-  .blink {
-    animation: blink 1s infinite;
-    color: var(--accent-green);
-    font-size: 1.25rem;
-  }
-
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-
-  @media (max-width: 600px) {
-    .post-title {
-      font-size: 1.1rem;
-    }
-
-    .post-meta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.25rem;
-    }
-  }
-</style>
+    font-weight:  Contact

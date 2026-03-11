@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
-import { t } from '../../i18n';
+import { t } from '../../../i18n';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -23,15 +23,15 @@ function formatDate(date: Date): string {
 }
 ---
 
-<Layout title={`${post.data.title} - Linger`}>
+<Layout title={`${post.data.title} - Linger`} lang="zh">
   <main>
     <section class="header">
       <div class="prompt">
         <span class="symbol">$</span>
         <span class="command">cat {post.id}</span>
       </div>
-      <a href="/blog" class="back-link">
-        <span class="bracket">[</span>{t('blog.backPosts', 'en')}<span class="bracket">]</span>
+      <a href="/zh/blog" class="back-link">
+        <span class="bracket">[</span>{t('blog.backPosts', 'zh')}<span class="bracket">]</span>
       </a>
     </section>
 

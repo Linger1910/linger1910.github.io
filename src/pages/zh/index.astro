@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { t } from '../i18n';
+import Layout from '../../layouts/Layout.astro';
+import { t } from '../../i18n';
 ---
 
-<Layout title="Linger - Tinkerer & Developer">
+<Layout title="Linger - 折腾者 & 开发者" lang="zh">
   <main>
     <section class="hero">
       <div class="prompt">
@@ -12,23 +12,23 @@ import { t } from '../i18n';
       </div>
 
       <h1>
-        <span class="keyword">{t('hero.greeting', 'en')}</span>
+        <span class="keyword">{t('hero.greeting', 'zh')}</span>
         <span class="name">Linger</span>
       </h1>
 
-      <p class="tagline">{t('hero.tagline', 'en')}</p>
+      <p class="tagline">{t('hero.tagline', 'zh')}</p>
     </section>
 
     <section class="about">
       <div class="prompt">
         <span class="symbol">$</span>
-        <span class="command">{t('about.command', 'en')}</span>
+        <span class="command">{t('about.command', 'zh')}</span>
       </div>
 
       <div class="content">
-        <p>{t('about.content', 'en')}</p>
+        <p>{t('about.content', 'zh')}</p>
         <p class="signature">
-          <span class="comment">{t('about.signature', 'en')}</span>
+          <span class="comment">{t('about.signature', 'zh')}</span>
         </p>
       </div>
     </section>
@@ -36,34 +36,34 @@ import { t } from '../i18n';
     <section class="interests">
       <div class="prompt">
         <span class="symbol">$</span>
-        <span class="command">{t('interests.command', 'en')}</span>
+        <span class="command">{t('interests.command', 'zh')}</span>
       </div>
 
       <ul class="list">
-        <li><span class="bullet">→</span> {t('interests.ai', 'en')}</li>
-        <li><span class="bullet">→</span> {t('interests.opensource', 'en')}</li>
-        <li><span class="bullet">→</span> {t('interests.indie', 'en')}</li>
-        <li><span class="bullet">→</span> {t('interests.philosophy', 'en')}</li>
+        <li><span class="bullet">→</span> {t('interests.ai', 'zh')}</li>
+        <li><span class="bullet">→</span> {t('interests.opensource', 'zh')}</li>
+        <li><span class="bullet">→</span> {t('interests.indie', 'zh')}</li>
+        <li><span class="bullet">→</span> {t('interests.philosophy', 'zh')}</li>
       </ul>
     </section>
 
     <section class="links">
       <div class="prompt">
         <span class="symbol">$</span>
-        <span class="command">{t('links.command', 'en')}</span>
+        <span class="command">{t('links.command', 'zh')}</span>
       </div>
 
       <nav class="nav-links">
         <a href="https://github.com/Linger1910" target="_blank" rel="noopener">
-          <span class="bracket">[</span>{t('nav.github', 'en')}<span class="bracket">]</span>
+          <span class="bracket">[</span>{t('nav.github', 'zh')}<span class="bracket">]</span>
         </a>
         <span class="separator">//</span>
-        <a href="/blog">
-          <span class="bracket">[</span>{t('nav.blog', 'en')}<span class="bracket">]</span>
+        <a href="/zh/blog">
+          <span class="bracket">[</span>{t('nav.blog', 'zh')}<span class="bracket">]</span>
         </a>
         <span class="separator">//</span>
-        <a href="/contact">
-          <span class="bracket">[</span>{t('nav.contact', 'en')}<span class="bracket">]</span>
+        <a href="/zh/contact">
+          <span class="bracket">[</span>{t('nav.contact', 'zh')}<span class="bracket">]</span>
         </a>
       </nav>
     </section>
@@ -121,11 +121,6 @@ import { t } from '../i18n';
   .about .content p {
     margin-bottom: 1rem;
     line-height: 1.8;
-  }
-
-  .highlight {
-    color: var(--accent-purple);
-    font-weight: 500;
   }
 
   .comment {
