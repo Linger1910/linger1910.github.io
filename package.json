@@ -1,5 +1,5 @@
 {
-  "name": "linger1910.github.io",
+  "name": "sunzhenio.github.io",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Linger1910/Linger1910.github.io.git"
+    "url": "git+https://github.com/sunzhenio/sunzhenio.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Linger1910/Linger1910.github.io/issues"
+    "url": "https://github.com/sunzhenio/sunzhenio.github.io/issues"
   },
-  "homepage": "https://github.com/Linger1910/Linger1910.github.io#readme",
+  "homepage": "https://github.com/sunzhenio/sunzhenio.github.io#readme",
   "dependencies": {
     "@astrojs/check": "^0.9.7",
     "astro": "^6.0.2",
