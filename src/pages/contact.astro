@@ -17,8 +17,8 @@ import Layout from '../layouts/Layout.astro';
     <section class="contact-info">
       <div class="contact-item">
         <span class="label">Email:</span>
-        <a href="mailto:linger_1910@outlook.com" class="value">
-          linger_1910@outlook.com
+        <a href="#" class="value" id="email-link" data-encoded="bGluZ2VyXzE5MTBAb3V0bG9vay5jb20=">
+          [loading...]
         </a>
       </div>
     </section>
@@ -123,3 +123,12 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 </style>
+
+<script>
+  const link = document.getElementById('email-link');
+  if (link) {
+    const email = atob(link.dataset.encoded || '');
+    link.href = 'mailto:' + email;
+    link.textContent = email;
+  }
+</script>
